@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "es2020", // Specify ECMAScript target version
+		"module": "commonjs", // Specify module code generation
+		"lib": ["es2020"], // Specify library files to be included in the compilation
+		"outDir": "./dist", // Redirect output structure to the directory
+		"rootDir": "./src", // Specify the root directory of input files
+		"strict": true, // Enable all strict type-checking options
+		"esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+		"skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts)
+		"forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+		"moduleResolution": "node", // Resolve modules using Node.js style
+		"resolveJsonModule": true, // Include modules imported with .json extension
+		"experimentalDecorators": true, // Enables experimental support for ES decorators
+		"emitDecoratorMetadata": true, // Enables experimental support for emitting type metadata for decorators
+	},
+	"include": [
+		"src/**/*", // Include all TypeScript files in src directory
+	],
+	"exclude": [
+		"node_modules", // Exclude the node_modules directory
+	],
+}
