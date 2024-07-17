@@ -21,6 +21,7 @@ export const initServer = () => {
 	const app = express()
 	const whitelist: any[] = [
 		process.env.THE_FRONTEND_URL,
+		process.env.THE_FRONTEND_SECOND_URL,
 		process.env.THE_FRONTEND_DIGITAL_OCEAN_URL,
 		process.env.THE_FRONTEND_DIGITAL_OCEAN_SECOND_URL,
 	]

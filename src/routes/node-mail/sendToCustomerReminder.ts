@@ -54,6 +54,7 @@ sendToCustomerReminderRouter.post(
 	'/',
 	async (req: Request | any, res: Response, next: NextFunction) => {
 		writeToFile(req.body.qrString)
+		console.log('sendToCustomerReminderRouter post request')
 		// * make mailable object
 		const contentText = `
 Från: ${req.body.ourCompany}
@@ -133,7 +134,7 @@ ${req.body.message}
 			from: `${fromField} ${res.locals.email}`,
 			sender: req.body.email,
 			to: req.body.customerMail,
-			bcc: req.body.email,
+			bcc: req.body.bcc,
 			replyTo: req.body.email,
 			subject: `${req.body.subject} ${req.body.reminderNumber}, Förfallodatum: ${req.body.reminderDueDate}, Att betala: ${req.body.toPay}`,
 			priority: 'high',

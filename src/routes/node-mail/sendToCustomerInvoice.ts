@@ -54,12 +54,7 @@ sendToCustomerInvoiceRouter.post(
 	'/',
 	async (req: Request | any, res: Response, next: NextFunction) => {
 		writeToFile(req.body.qrString)
-		/* console.log('req.body.fileName: ', req.body.fileName)
-		console.log(
-			'req?.files?.pdfFileStream.data: ',
-			req?.files?.pdfFileStream.data,
-		)
-		req?.files?.pdfFileStream.data */
+		console.log('sendToCustomerInvoiceRouter post request')
 		// * make mailable object
 		const contentText = `
 Från: ${req.body.ourCompany}
@@ -135,7 +130,7 @@ ${req.body.message}
 			from: `${fromField} ${res.locals.email}`,
 			sender: req.body.email,
 			to: req.body.customerMail,
-			bcc: req.body.email,
+			bcc: req.body.bcc,
 			replyTo: req.body.email,
 			subject: `${req.body.subject} ${req.body.invoiceNumber}, Förfallodatum: ${req.body.invoiceDueDate}, Att betala: ${req.body.toPay}`,
 			priority: 'high',
